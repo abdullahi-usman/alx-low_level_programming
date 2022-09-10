@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
@@ -16,8 +15,11 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	sprintf(buf, "%d", n);
-	sprintf(buf, "%d", buf[strlen(buf) - 1]);
+	sprintf(buf, "%c", buf[strlen(buf) - 1]);
 	digit = atoi(buf);
+
+	if (n < 0)
+		digit = ~n + 1;
 
 	if (digit > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, digit);
