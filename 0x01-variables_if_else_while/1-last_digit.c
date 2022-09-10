@@ -19,12 +19,12 @@ int main(void)
 	digit = atoi(buf);
 
 	if (n < 0)
-		digit = ~n + 1;
+		digit = ~digit + 1;
 
 	if (digit > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, digit);
 	else if (digit == 0)
-		printf("Last digit of %d is %d and is zero\n", n, digit);
+		printf("Last digit of %d is %d and is 0\n", n, digit);
 	else
 		printf("Last digit of %d is %d and is less than 6 and not zero\n", n, digit);
 	/* your code goes there */
