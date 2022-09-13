@@ -1,6 +1,6 @@
 /**
  * _islower - _islower
- * @parameterc: the character
+ * @c: the character
  * Return: Always 0 (Success)
  */
 int _islower(int c)
