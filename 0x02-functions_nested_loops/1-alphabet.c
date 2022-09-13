@@ -1,7 +1,7 @@
 #include "putchar.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Prints the alphabets
  *
  * Return: Always 0 (Success)
  */
