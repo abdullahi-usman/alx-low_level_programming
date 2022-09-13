@@ -1,6 +1,6 @@
 #include "putchar.h"
 
-**
+/**
  * print_alphabet_x10 - Prints the alphabets
  *
  * Return: Always 0 (Success)
