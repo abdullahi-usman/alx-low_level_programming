@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <putchar.h>
+
 
 /*
  * Prints alphabets
  *
  */
-extern void print_alphabet(void)
+void print_alphabet(void)
 {
 	int c;
 
