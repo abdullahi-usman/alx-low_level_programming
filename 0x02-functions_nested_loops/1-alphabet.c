@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <putchar.h>
+
 
 /*
  * Prints alphabets
