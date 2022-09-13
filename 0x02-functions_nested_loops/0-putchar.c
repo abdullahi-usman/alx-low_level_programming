@@ -5,8 +5,8 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+void _putchar(char ch)
 {
-	printf("_putchar\n");
+	printf("%c", ch);
 	return (0);
 }
