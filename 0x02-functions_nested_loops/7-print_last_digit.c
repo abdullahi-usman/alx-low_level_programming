@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 /**
  * print_last_digit - print_last_digit
  * @n: the number
