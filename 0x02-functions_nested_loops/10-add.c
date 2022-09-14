@@ -1,5 +1,7 @@
 /**
  * add - addtwo numbers
+ * @a: first number
+ * @b: second number
  *
  * Return: result
  */
