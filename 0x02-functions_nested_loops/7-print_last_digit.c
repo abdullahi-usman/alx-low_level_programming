@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "putchar.h"
 /**
  * print_last_digit - print_last_digit
  * @n: the number
