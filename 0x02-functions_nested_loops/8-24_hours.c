@@ -2,7 +2,6 @@
 
 /**
  * jack_bauer - jack_bauer
- * @n: the number
  * Return: Always 0 (Success)
  */
 void jack_bauer(void)
@@ -13,7 +12,7 @@ void jack_bauer(void)
 	{
 		for (j = 0; j <= 59; j++)
 		{
-			printf("%.2d:%.2d", i, j);
+			printf("%.2d:%.2d\n", i, j);
 		}
 	}
 }
