@@ -16,5 +16,5 @@ int print_last_digit(int n)
 	last_digit = buf[strlen(buf) - 1];
 
 	_putchar((int)last_digit);
-	return ((int)last_digit);
+	return (last_digit - 48);
 }
