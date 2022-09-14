@@ -9,11 +9,11 @@ void jack_bauer(void)
 {
 	int i, j;
 
-	for (i = 0; i < 60; i++)
+	for (i = 0; i <= 23; i++)
 	{
-		for (j = 0; j < 60; j++)
+		for (j = 0; j <= 59; j++)
 		{
-			printf("%d:%d", i, j);
+			printf("%.2d:%.2d", i, j);
 		}
 	}
 }
