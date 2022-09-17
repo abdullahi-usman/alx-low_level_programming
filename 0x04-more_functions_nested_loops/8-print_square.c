@@ -1,8 +1,8 @@
 #include "putchar.h"
 
 /**
- * print_square(int size) - print squares
- * @n: the number of # char
+ * print_square - print squares
+ * @size: the number of # char
  *
  * Return: Always status.
  */
