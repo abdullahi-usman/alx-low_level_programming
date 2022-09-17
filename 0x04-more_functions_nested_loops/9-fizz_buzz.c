@@ -30,7 +30,8 @@ int main(void)
 			printf("%d", i);
 		}
 
-		printf(" ");
+		if (i != 99)
+			printf(" ");
 	}
 
 	return (0);
