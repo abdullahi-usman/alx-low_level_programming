@@ -8,7 +8,6 @@
  */
 int main()
 {
-	puts("Tada! Congrats");
 	rand();
 
 	return (0);
