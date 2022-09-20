@@ -6,8 +6,6 @@
  * rev_string - return string in reverse order
  * @s: the string
  *
- * Return: the reverse string
- *
  */
 void rev_string(char *s)
 {
@@ -22,5 +20,8 @@ void rev_string(char *s)
 
 	rev[s_length] = '\0';
 
-	return (rev);
+	for (i = 0; i < s_length; i++)
+	{
+		*s++ = rev[i];
+	}
 }
