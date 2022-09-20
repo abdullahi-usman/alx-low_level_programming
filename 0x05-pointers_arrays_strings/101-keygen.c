@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - the entry point
@@ -7,5 +8,8 @@
  */
 int main()
 {
-	return (rand());
+	puts("Tada! Congrats");
+	rand();
+
+	return (0);
 }
