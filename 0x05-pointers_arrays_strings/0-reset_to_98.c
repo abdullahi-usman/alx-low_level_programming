@@ -1,4 +1,5 @@
-/** reset_to_98 - reset to 98
+/**
+ * reset_to_98 - reset to 98
  * @n: the pointer to reset
  *
  * Returns: Void
