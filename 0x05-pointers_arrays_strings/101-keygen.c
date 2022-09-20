@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 /**
  * main - the entry point
@@ -8,7 +9,9 @@
  */
 int main()
 {
-	rand();
+
+	srand(time(NULL));
+	printf("%d\n", rand());
 
 	return (0);
 }
