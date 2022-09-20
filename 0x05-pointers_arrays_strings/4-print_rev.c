@@ -11,7 +11,7 @@
 void print_rev(char *s)
 {
 	int s_length = strlen(s);
-	char rev[s_length + 1];
+	char *rev = malloc(sizeof(char) * strlen(s));
 	int i, j = 0;
 
 	for (i = s_length - 1; i >= 0; i--)
