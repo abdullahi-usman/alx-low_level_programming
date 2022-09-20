@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * print_array - print array
+ * @a: the pointer of int
+ * @n: number to print
+ *
+ * Return: Void
+ */
+
 void print_array(int *a, int n)
 {
 	int i;
@@ -10,7 +18,7 @@ void print_array(int *a, int n)
 
 		if (i != n - 1)
 		{
-			putchar(", ");
+			printf(", ");
 		}
 	}
 
