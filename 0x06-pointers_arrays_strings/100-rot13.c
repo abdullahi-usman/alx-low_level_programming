@@ -10,19 +10,19 @@
 
 char *rot13(char *str)
 {
-	int i, length = (int)strlen(str);
+	int i, j;
+	char *alpha = "abcdefghijklmnopqrstuvwxyz";
+	char *alpha_r = "nopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; i < length; i++)
+	for (i = 0; i < (int)strlen(str); i++)
 	{
-		int ch = toupper(str[i]);
-
-		if (ch >= 65 && ch <= 77)
+		for (j = 0; j < (int)strlen(alpha); j++)
 		{
-			str[i] = (char)((int)ch + 13);
-		}
-		else if (ch > 77 && ch <= 90)
-		{
-			str[i] = (char)(int)(str[i] - 13);
+			if (alpha[j] == str[i])
+			{
+				str[i] = alpha_r[j];
+				break;
+			}
 		}
 	}
 
