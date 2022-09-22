@@ -1,4 +1,4 @@
-
+#include <string.h>
 
 /**
  * leet - convert to code
