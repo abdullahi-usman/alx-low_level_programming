@@ -1,5 +1,5 @@
 
-void _putchar(int ch);
+void _putchar(char ch);
 
 /**
  * print_number - print the number
