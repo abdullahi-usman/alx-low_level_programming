@@ -31,9 +31,6 @@ char *cap_string(char *str)
 		{
 			capitalize_next = 0;
 		}
-
-		if (c == '\t')
-			str[i] = ' ';
 	}
 
 	return (str);
