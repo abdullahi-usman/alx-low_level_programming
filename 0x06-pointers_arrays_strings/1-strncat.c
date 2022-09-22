@@ -1,7 +1,7 @@
 #include <string.h>
 
 /**
- * _strcat - concat two strings
+ * _strncat - concat two strings
  * @dest: destination string
  * @src: source string
  * @n: the number to concat
