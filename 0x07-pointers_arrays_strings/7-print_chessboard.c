@@ -1,4 +1,5 @@
-#include "putchar.h"
+
+void _putchar(char c);
 /**
  * print_chessboard - print the chess board
  * @a: the string
