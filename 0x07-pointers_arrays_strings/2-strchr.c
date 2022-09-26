@@ -3,7 +3,7 @@
 /**
  * _strchr - stringy character
  * @s: the string
- * @n: the character
+ * @c: the character
  *
  * Return: the character
  */
