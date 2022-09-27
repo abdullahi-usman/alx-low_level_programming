@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 /**
  * print_diagsums - print diagsum
@@ -10,27 +10,30 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, j, i_cal = 0, j_cal = size, arr_length = (int)sizeof(a);
+	int c,
+		arr_size = size * size,
+		i_result = 0, i_count_down = 0,
+		j_result = 0, j_count_down = size - 1;
 
-	int arr1;
-	int arr2;
+	i_result += a[0];
 
-	for (i = 0; i < arr_length; i++)
+	for (c = 0; c < arr_size; c++)
 	{
-		for (j = 0; j < arr_length; j++)
+		if (i_count_down == size + 1)
 		{
-			if (i_cal == j)
-			{
-				arr1 += ((int **)a)[i][j];
-			}
-
-			if (j_cal == j)
-			{
-				arr2 += ((int **)a)[i][j];
-			}
+			i_result += a[c];
+			i_count_down = 0;
 		}
 
-		i_cal++;
-		j_cal--;
+		if (j_count_down == 0 && c != arr_size - 1)
+		{
+			j_result += a[c];
+			j_count_down = size - 1;
+		}
+
+		++i_count_down;
+		--j_count_down;
 	}
+
+	printf("%d, %d\n", i_result, j_result);
 }
