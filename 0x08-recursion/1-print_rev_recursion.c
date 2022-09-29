@@ -9,10 +9,15 @@
  */
 void _print_rev_recursion(char *s)
 {
-	int i;
+	int s_length = strlen(index(s, s[0]));
+	putchar(s[s_length - 1]);
 
-	for (i = strlen(s) - 1; i != 0; i--)
-	{
-		putchar(*(s + i));
-	}
+	if (s_length <= 0)
+		return;
+
+	char buf[s_length - 1];
+	strncpy(buf, s, s_length - 1);
+	buf[s_length - 1] = '\0';
+
+	_print_rev_recursion(buf);
 }
