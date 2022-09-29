@@ -13,12 +13,12 @@ void _print_rev_recursion(char *s)
 	int s_length = strlen(index(s, s[0]));
 	char *buf = malloc(sizeof(char) * (s_length - 1));
 
-	putchar(s[s_length - 1]);
-
-	if (s_length <= 1)
+	if (s_length <= 0)
 	{
 		return;
 	}
+
+	putchar(s[s_length - 1]);
 
 	strncpy(buf, s, s_length - 1);
 	buf[s_length - 1] = '\0';
