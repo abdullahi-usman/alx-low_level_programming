@@ -15,7 +15,7 @@ void _print_rev_recursion(char *s)
 
 	putchar(s[s_length - 1]);
 
-	if (s_length <= 0)
+	if (s_length <= 1)
 	{
 		return;
 	}
