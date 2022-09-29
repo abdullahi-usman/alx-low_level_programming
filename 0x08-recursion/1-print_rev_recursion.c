@@ -15,7 +15,7 @@ void _print_rev_recursion(char *s)
 	if (s_length <= 0)
 		return;
 
-	char buf[s_length - 1];
+	char *buf = malloc(sizeof(char) * (s_length - 1));
 	strncpy(buf, s, s_length - 1);
 	buf[s_length - 1] = '\0';
 
