@@ -16,9 +16,11 @@ void _print_rev_recursion(char *s)
 	putchar(s[s_length - 1]);
 
 	if (s_length <= 0)
+	{
 		return;
+	}
 
-		strncpy(buf, s, s_length - 1);
+	strncpy(buf, s, s_length - 1);
 	buf[s_length - 1] = '\0';
 
 	_print_rev_recursion(buf);
