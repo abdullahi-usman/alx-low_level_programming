@@ -1,0 +1,1983 @@
+!<arch>
+//                                              640       `
+0-positive_or_negative.c/
+0-puts_recursion.c/
+100-set_string.c/
+101-print_number.c/
+103-infinite_add.c/
+10-print_triangle.c/
+11-print_to_98.c/
+1-print_rev_recursion.c/
+2-largest_number.c/
+2-print_alphabet.c/
+2-print_alphabet_x10.c/
+2-strlen_recursion.c/
+3-print_alphabets.c/
+3-print_numbers.c/
+3-print_remaining_days.c/
+4-pow_recursion.c/
+4-print_alphabt.c/
+4-print_most_numbers.c/
+5-more_numbers.c/
+5-print_numbers.c/
+5-sqrt_recursion.c/
+5-string_toupper.c/
+6-is_prime_number.c/
+6-print_numberz.c/
+7-print_chessboard.c/
+7-print_diagonal.c/
+7-print_last_digit.c/
+7-print_tebahpla.c/
+8-print_base16.c/
+8-print_diagsums.c/
+8-print_square.c/
+
+0-isupper.c/    0           0     0     644     185       `
+
+/**
+ * _isupper - check ch is upper.
+ * @c: The character
+ * Return: Always status.
+ */
+
+int _isupper(int c)
+{
+	if (c >= 65 && c <= 90)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+0-main.c/       0           0     0     644     189       `
+#include "main.h"
+
+/**
+ * main - tests function that prints if integer is positive or negative
+ * Return: 0
+ */
+
+int main(void)
+{
+	int i;
+
+	i = 0;
+	positive_or_negative(i);
+
+	return (0);
+}
+
+0-memset.c/     0           0     0     644     239       `
+#include <string.h>
+
+/**
+ * _memset - set the memory
+ * @s: the buffer to set
+ * @b: the char to set
+ * @n: the size
+ *
+ * Return: The setted buffer
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	return ((char *)memset(s, b, n));
+}
+
+/0              0           0     0     644     366       `
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	/* your code goes there */
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n == 0)
+		printf("%d is zero\n", n);
+	else
+		printf("%d is negative\n", n);
+	return (0);
+}
+0-putchar.c/    0           0     0     644     174       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+extern void _putchar(char ch);
+
+void _putchar(char ch)
+{
+	printf("%c", ch);
+	return (0);
+}
+/26             0           0     0     644     148       `
+#include <stdio.h>
+
+/**
+ * _puts_recursion - print the string
+ * @s: the string
+ *
+ * Return: Void
+ */
+
+void _puts_recursion(char *s)
+{
+	puts(s);
+}
+0-reset_to_98.c/0           0     0     644     125       `
+/**
+ * reset_to_98 - reset to 98
+ * @n: the pointer to reset
+ *
+ * Returns: Void
+ */
+
+void reset_to_98(int *n)
+{
+	*n = 98;
+}
+
+0-strcat.c/     0           0     0     644     213       `
+#include <string.h>
+
+/**
+ * _strcat - concat two strings
+ * @dest: destination string
+ * @src: source string
+ *
+ * Return: The new string
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	return (strcat(dest, src));
+}
+
+0-whatsmyname.c/0           0     0     644     231       `
+#include <stdio.h>
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+
+int main(int argc, char **argv)
+{
+	printf("%s\n", argv[argc - argc]);
+
+	return (0);
+}
+
+100-atoi.c/     0           0     0     644     507       `
+#include <stdlib.h>
+#include <string.h>
+
+/**
+ * _atoi - return numbers
+ * @s: the string of numbers
+ *
+ * Return: the number;
+ */
+int _atoi(char *s)
+{
+	int s_length = strlen(s);
+	char *ret = malloc(sizeof(char) * s_length);
+	int i, j = 0;
+
+	if (s_length == 0)
+		return 0;
+
+	for (i = 0; i < s_length; i++)
+	{
+		if ((s[i] < 48 || s[i] > 59))
+		{
+			continue;
+		}
+
+		if (s[i - 1] == '-')
+			ret[j++] = '-';
+		else if (s[i - 1] == '+')
+			ret[j++] = '+';
+
+		ret[j++] = s[i];
+	}
+
+	j = atoi(ret);
+
+	return (j);
+}
+
+100-change.c/   0           0     0     644     993       `
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <limits.h>
+#include <ctype.h>
+
+/**
+ * test - tmake test
+ * @amount: number of argumetns
+ *
+ *
+ * Return: Vois
+ */
+
+int test(int amount)
+{
+	int coins = 0;
+
+	while (amount > 0)
+	{
+		if (amount >= 25)
+		{
+			amount -= 25;
+			coins++;
+			continue;
+		}
+
+		if (amount >= 10)
+		{
+			amount -= 10;
+			coins++;
+			continue;
+		}
+
+		if (amount >= 5)
+		{
+			amount -= 5;
+			coins++;
+			continue;
+		}
+
+		if (amount >= 2)
+		{
+			amount -= 2;
+			coins++;
+			continue;
+		}
+
+		if (amount >= 1)
+		{
+			amount -= 1;
+			coins++;
+			continue;
+		}
+	}
+	return (coins);
+}
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+int main(int argc, char **argv)
+{
+	int amount = 0, coins = 0;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	if (argc < 0)
+	{
+		printf("%d\n", 0);
+	}
+
+	amount = atoi(argv[1]);
+	coins = test(amount);
+
+	printf("%d\n", coins);
+
+	return (0);
+}
+
+100-rot13.c/    0           0     0     644     438       `
+#include <string.h>
+#include <ctype.h>
+
+/**
+ * rot13 - encrypt
+ * @str: the string to encrypt
+ *
+ * Return: the str
+ */
+
+char *rot13(char *str)
+{
+	int i, j;
+	char *alpha = "abcdefghijklmnopqrstuvwxyz";
+	char *alpha_r = "nopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; i < (int)strlen(str); i++)
+	{
+		for (j = 0; j < (int)strlen(alpha); j++)
+		{
+			if (alpha[j] == str[i])
+			{
+				str[i] = alpha_r[j];
+				break;
+			}
+		}
+	}
+
+	return (str);
+}
+/46             0           0     0     644     157       `
+
+/**
+ * set_string - set s to to
+ * @s: the string to set to
+ * @to: the to string
+ *
+ * Return: void
+ */
+
+void set_string(char **s, char *to)
+{
+	*s = to;
+}
+
+101-keygen.c/   0           0     0     644     185       `
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+/**
+ * main - the entry point
+ *
+ * Return: int
+ */
+int main()
+{
+
+	srand(time(NULL));
+	printf("%d\n", rand());
+
+	return (0);
+}
+
+/64             0           0     0     644     232       `
+
+void _putchar(char ch);
+
+/**
+ * print_number - print the number
+ * @n: the number
+ */
+void print_number(int n)
+{
+	int i;
+	char buf[256];
+
+	sprintf(buf, "%d", n);
+
+	for (i = 0; i < (int)strlen(buf); i++)
+	{
+		_putchar(buf[i]);
+	}
+}
+101-quote.c/    0           0     0     644     184       `
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	puts("and that piece of art is useful\" - Dora Korpar, 2015-10-19");
+	return (1);
+}
+/84             0           0     0     644     0         `
+10-add.c/       0           0     0     644     137       `
+/**
+ * add - addtwo numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: result
+ */
+int add(int a, int b)
+{
+	return (a + b);
+}
+
+10-main.c/      0           0     0     644     203       `
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_triangle(2);
+    print_triangle(10);
+    print_triangle(1);
+    print_triangle(0);
+    return (0);
+}
+/104            0           0     0     644     366       `
+#include "putchar.h"
+
+/**
+ * print_triangle - print triangle size
+ * @size: the number of # char
+ *
+ * Return: Always status.
+ */
+
+void print_triangle(int size)
+{
+
+	int i, j;
+
+	for (i = 1; i <= size; i++)
+	{
+		for (j = size; j != 0; j--)
+		{
+			if (j <= i)
+				_putchar('#');
+			else
+				_putchar(' ');
+		}
+
+		_putchar('\n');
+	}
+
+	if (size <= 0)
+		_putchar('\n');
+}
+/125            0           0     0     644     286       `
+#include <stdio.h>
+
+/**
+ * print_to_98 - print_to_98 numbers
+ * @n: number
+ *
+ */
+void print_to_98(int n)
+{
+	int range_start = n;
+
+	while (range_start != 98)
+	{
+		if (n > 98)
+			printf("%d, ", range_start--);
+		else
+			printf("%d, ", range_start++);
+	}
+
+	printf("%d\n", range_start);
+}
+1-alphabet.c/   0           0     0     644     217       `
+#include "putchar.h"
+
+/**
+ * print_alphabet - Prints the alphabets
+ *
+ * Return: Always 0 (Success)
+ */
+void print_alphabet(void)
+{
+	int c;
+
+	for (c = 97; c <= 122; c++)
+	{
+		_putchar((char)c);
+	}
+
+	_putchar('\n');
+}
+
+1-args.c/       0           0     0     644     236       `
+#include <stdio.h>
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+
+int main(int argc, char **argv)
+{
+
+	(void)argv;
+	printf("%d\n", argc - 1);
+
+	return (0);
+}
+1-isdigit.c/    0           0     0     644     185       `
+
+/**
+ * _isdigit - check ch is digit.
+ * @c: The character
+ * Return: Always status.
+ */
+
+int _isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+1-last_digit.c/ 0           0     0     644     648       `
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <string.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n, digit;
+	char buf[256];
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	sprintf(buf, "%d", n);
+	sprintf(buf, "%c", buf[strlen(buf) - 1]);
+	digit = atoi(buf);
+
+	if (n < 0)
+		digit = ~digit + 1;
+
+	if (digit > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, digit);
+	else if (digit == 0)
+		printf("Last digit of %d is %d and is 0\n", n, digit);
+	else
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, digit);
+	/* your code goes there */
+	return (0);
+}
+1-main.c/       0           0     0     644     133       `
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_alphabet();
+    return (0);
+}
+
+1-memcpy.c/     0           0     0     644     245       `
+#include <string.h>
+
+/**
+ * _memcpy - copy memory
+ * @dest: the destination
+ * @src: the source
+ * @n: the size
+ *
+ * Return: The return memory
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	return ((char *)memcpy(dest, src, n));
+}
+
+/143            0           0     0     644     445       `
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+/**
+ * _print_rev_recursion - print in reverse
+ * @s: the string
+ *
+ * Return: Void
+ */
+void _print_rev_recursion(char *s)
+{
+	int s_length = strlen(index(s, s[0]));
+	char *buf = malloc(sizeof(char) * (s_length - 1));
+
+	if (s_length <= 0)
+	{
+		return;
+	}
+
+	putchar(s[s_length - 1]);
+
+	strncpy(buf, s, s_length - 1);
+	buf[s_length - 1] = '\0';
+
+	_print_rev_recursion(buf);
+	free(buf);
+}
+
+1-strncat.c/    0           0     0     644     254       `
+#include <string.h>
+
+/**
+ * _strncat - concat two strings
+ * @dest: destination string
+ * @src: source string
+ * @n: the number to concat
+ *
+ * Return: The new string
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	return (strncat(dest, src, n));
+}
+1-swap.c/       0           0     0     644     157       `
+/**
+ * swap_int - swap
+ * @a: first pointer
+ * @b: second pointer
+ *
+ * Returns: Void
+ */
+void swap_int(int *a, int *b)
+{
+	int c = *a;
+
+	*a = *b;
+	*b = c;
+}
+
+2-args.c/       0           0     0     644     266       `
+#include <stdio.h>
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+
+int main(int argc, char **argv)
+{
+
+	int i;
+
+	for (i = 0; i < argc; i++)
+	{
+		printf("%s\n", argv[i]);
+	}
+
+	return (0);
+}
+/168            0           0     0     644     366       `
+#include "main.h"
+
+/**
+ * largest_number - returns the largest of 3 numbers
+ * @a: first integer
+ * @b: second integer
+ * @c: third integer
+ * Return: largest number
+ */
+
+int largest_number(int a, int b, int c)
+{
+	int largest;
+
+	if (a > b && a > c)
+	{
+		largest = a;
+	}
+	else if (b > a && b > c)
+	{
+		largest = b;
+	}
+	else
+	{
+		largest = c;
+	}
+
+	return (largest);
+}
+2-mul.c/        0           0     0     644     140       `
+
+/**
+ * mul - multiply.
+ * @a: first digit
+ * @b: second digit
+ *
+ * Return: Always status.
+ */
+
+int mul(int a, int b)
+{
+	return (a * b);
+}
+/188            0           0     0     644     190       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 97; n <= 122; n++)
+	{
+		putchar(n);
+	}
+	putchar('\n');
+
+	return (0);
+}
+/208            0           0     0     644     275       `
+#include "putchar.h"
+
+/**
+ * print_alphabet_x10 - Prints the alphabets
+ *
+ * Return: Always 0 (Success)
+ */
+void print_alphabet_x10(void)
+{
+	int s;
+
+	for (s = 0; s < 10; s++)
+	{
+
+		int c;
+
+		for (c = 97; c <= 122; c++)
+		{
+			_putchar((char)c);
+		}
+
+		_putchar('\n');
+
+	}
+
+}
+
+2-strchr.c/     0           0     0     644     186       `
+#include <string.h>
+
+/**
+ * _strchr - stringy character
+ * @s: the string
+ * @c: the character
+ *
+ * Return: the character
+ */
+char *_strchr(char *s, char c)
+{
+	return (strchr(s, c));
+}
+2-strlen.c/     0           0     0     644     163       `
+#include <string.h>
+
+/**
+ * _strlen - return str length
+ * @s: the string
+ *
+ * Return: The length of the string
+ */
+int _strlen(char *s)
+{
+	return (strlen(s));
+}
+
+/232            0           0     0     644     164       `
+#include <string.h>
+
+/**
+ * _strlen_recursion - print the str len
+ * @s: the string
+ *
+ * Return: VOid
+ */
+int _strlen_recursion(char *s)
+{
+
+	return (strlen(s));
+}
+2-strncpy.c/    0           0     0     644     252       `
+#include <string.h>
+
+/**
+ * _strncpy - copy two strings
+ * @dest: destination string
+ * @src: source string
+ * @n: the number to concat
+ *
+ * Return: The new string
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	return (strncpy(dest, src, n));
+}
+3-factorial.c/  0           0     0     644     220       `
+
+
+/**
+ * factorial - calculate the factorial of a number
+ * @n: the number
+ *
+ * Return: the factorial
+ */
+int factorial(int n)
+{
+	if (n == 0)
+		return (1);
+
+	if (n < 0)
+		return (-1);
+
+	return (n * factorial(n - 1));
+}
+3-islower.c/    0           0     0     644     158       `
+/**
+ * _islower - _islower
+ * @c: the character
+ * Return: Always 0 (Success)
+ */
+int _islower(int c)
+{
+	if (c < 97 || c > 122)
+		return (0);
+
+	return (1);
+}
+3-mul.c/        0           0     0     644     322       `
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+
+int main(int argc, char **argv)
+{
+
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+
+	return (0);
+}
+/254            0           0     0     644     228       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 97; n <= 122; n++)
+		putchar(n);
+
+	for (n = 65; n <= 90; n++)
+		putchar(n);
+
+	putchar('\n');
+
+	return (0);
+}
+/275            0           0     0     644     205       `
+#include "putchar.h"
+
+/**
+ * print_numbers - print numbers
+ *
+ * Return: Always status.
+ */
+
+void print_numbers(void)
+{
+	int i;
+
+	for (i = 48; i <= 57; i++)
+	{
+		_putchar((char)i);
+	}
+
+	_putchar('\n');
+}
+
+
+/294            0           0     0     644     737       `
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * print_remaining_days - takes a date and prints how many days are
+ * left in the year, taking leap years into account
+ * @month: month in number format
+ * @day: day of month
+ * @year: year
+ * Return: void
+ */
+
+void print_remaining_days(int month, int day, int year)
+{
+	if ((year % 4 == 0 || year % 400 == 0) && !(year % 100 == 0))
+	{
+		if (month >= 2 && day >= 60)
+		{
+			day++;
+		}
+
+		printf("Day of the year: %d\n", day);
+		printf("Remaining days: %d\n", 366 - day);
+	}
+	else
+	{
+		if (month == 2 && day > 60)
+		{
+			printf("Invalid date: %02d/%02d/%04d\n", month, day - 31, year);
+		}
+		else
+		{
+			printf("Day of the year: %d\n", day);
+			printf("Remaining days: %d\n", 365 - day);
+		}
+	}
+}
+3-puts.c/       0           0     0     644     153       `
+#include <stdio.h>
+
+/**
+ * _puts - prints string and ends with new line
+ * @str: the string
+ *
+ * Return: Void
+ */
+void _puts(char *str)
+{
+	puts(str);
+}
+
+3-strcmp.c/     0           0     0     644     212       `
+#include <string.h>
+
+/**
+ * _strcmp - compare two strings
+ * @dest: destination string
+ * @src: source string
+ *
+ * Return: The new string
+ */
+
+int _strcmp(char *dest, char *src)
+{
+	return (strcmp(dest, src));
+}
+3-strspn.c/     0           0     0     644     197       `
+#include <string.h>
+
+/**
+ * _strspn - stringy span
+ * @s: the string
+ * @accept: the accepted
+ *
+ * Return: the int
+ */
+unsigned int _strspn(char *s, char *accept)
+{
+	return (strspn(s, accept));
+}
+
+4-add.c/        0           0     0     644     583       `
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <limits.h>
+#include <ctype.h>
+
+/**
+ * main - the program entry point
+ * @argc: number of argumetns
+ * @argv: the array oc arguments
+ *
+ * Return: Vois
+ */
+
+int main(int argc, char **argv)
+{
+	int i, sum = 0;
+	long cal;
+	char *endptr;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		errno = 0;
+		cal = strtol(argv[i], &endptr, 10);
+
+		if (errno != 0 || isalpha(*endptr) != 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
+
+		sum += cal;
+	}
+
+	printf("%d\n", sum);
+
+	return (0);
+}
+
+4-isalpha.c/    0           0     0     644     181       `
+/**
+ * _isalpha - _isalpha
+ * @c: the character
+ * Return: Always 0 (Success)
+ */
+int _isalpha(int c)
+{
+	if ((c < 65 || c > 122) || (c > 90 && c < 97))
+		return (0);
+	return (1);
+}
+
+/320            0           0     0     644     285       `
+#include <math.h>
+
+/**
+ * _pow_recursion - recursion pow
+ * @x: the x value
+ * @y: the y value
+ *
+ * Return: the powed
+ */
+
+int _pow_recursion(int x, int y)
+{
+	if (y == 0)
+		return (1);
+
+	if (y < 0)
+		return (-1);
+
+	if (y == 1)
+		return (x);
+
+	return (x * _pow_recursion(x, y - 1));
+}
+
+/339            0           0     0     644     232       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 97; n <= 122; n++)
+	{
+		if (n == 101 || n == 113)
+			continue;
+
+		putchar(n);
+	}
+	putchar('\n');
+
+	return (0);
+}
+/358            0           0     0     644     259       `
+#include "putchar.h"
+
+/**
+ * print_most_numbers - print most numbers
+ *
+ * Return: Always status.
+ */
+
+void print_most_numbers(void)
+{
+	int i;
+
+	for (i = 48; i <= 57; i++)
+	{
+		if (i == 50 || i == 52)
+			continue;
+
+		_putchar((char)i);
+	}
+
+	_putchar('\n');
+}
+
+4-print_rev.c/  0           0     0     644     369       `
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * print_rev - print string in reverse order
+ * @s: the string
+ *
+ * Return: Void
+ *
+ */
+void print_rev(char *s)
+{
+	int s_length = strlen(s);
+	char *rev = malloc(sizeof(char) * strlen(s));
+	int i, j = 0;
+
+	for (i = s_length - 1; i >= 0; i--)
+	{
+		rev[j++] = s[i];
+	}
+
+	rev[s_length] = '\0';
+	puts(rev);
+}
+
+4-puts.c/       0           0     0     644     179       `
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
+}
+
+
+4-rev_array.c/  0           0     0     644     356       `
+#include <stdlib.h>
+/**
+ * reverse_array - Reverse an array
+ * @a: the array
+ * @n: number of element in an array
+ *
+ * Return;  Void
+ */
+
+void reverse_array(int *a, int n)
+{
+	int i, j = 0;
+	int *arr = (int *)(malloc(sizeof(int) * n));
+
+	for (i = n - 1; i >= 0; i--)
+	{
+		arr[j] = a[i];
+		j++;
+	}
+
+	i = 0;
+	for (i = 0; i < n; i++)
+	{
+		a[i] = arr[i];
+	}
+}
+4-strpbrk.c/    0           0     0     644     209       `
+#include <string.h>
+
+/**
+ * _strpbrk - the string break
+ * @s: the string
+ * @accept: the break
+ *
+ * Return: the breakkaede string
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	return (strpbrk(s, accept));
+}
+
+/382            0           0     0     644     261       `
+#include "putchar.h"
+
+/**
+ * more_numbers - print more numbers
+ *
+ * Return: Always status.
+ */
+
+void more_numbers(void)
+{
+	int i, j;
+
+	for (j = 0; j < 10; j++)
+	{
+		for (i = 0; i <= 14; i++)
+		{
+			_putchar((char)i);
+		}
+
+		if (j != 9)
+			_putchar('\n');
+	}
+}
+
+5-printf.c/     0           0     0     644     184       `
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return (0);
+}
+/400            0           0     0     644     189       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 48; n <= 57; n++)
+	{
+		putchar(n);
+	}
+	putchar('\n');
+
+	return (0);
+}
+
+5-rev_string.c/ 0           0     0     644     397       `
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * rev_string - return string in reverse order
+ * @s: the string
+ *
+ */
+void rev_string(char *s)
+{
+	int s_length = strlen(s);
+	char *rev = malloc(sizeof(char) * strlen(s));
+	int i, j = 0;
+
+	for (i = s_length - 1; i >= 0; i--)
+	{
+		rev[j++] = s[i];
+	}
+
+	rev[s_length] = '\0';
+
+	for (i = 0; i < s_length; i++)
+	{
+		*s++ = rev[i];
+	}
+}
+
+5-sign.c/       0           0     0     644     278       `
+#include "putchar.h"
+
+/**
+ * print_sign - print_sign
+ * @n: the number
+ * Return: Always 0 (Success)
+ */
+int print_sign(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		return (-1);
+	}
+	else if (n > 0)
+	{
+		_putchar('+');
+		return (1);
+	}
+	else
+	{
+		_putchar('0');
+		return (0);
+	}
+}
+/419            0           0     0     644     251       `
+#include <math.h>
+/**
+ * _sqrt_recursion - sqrt the number
+ * @n: the number
+ *
+ * Return: the sqrt
+ */
+int _sqrt_recursion(int n)
+{
+	if (n <= 0)
+		return (-1);
+
+	if (n == 1)
+		return (1);
+
+	return (_sqrt_recursion(n / 2) + _sqrt_recursion(n / 4));
+}
+
+/439            0           0     0     644     291       `
+#include <ctype.h>
+#include <string.h>
+
+/**
+ * string_toupper - convert string to upper case
+ * @str: the string
+ *
+ * Return: the string in upper case
+ */
+char *string_toupper(char *str)
+{
+	int i;
+
+	for (i = 0; i < (int)strlen(str); i++)
+	{
+		str[i] = toupper(str[i]);
+	}
+
+	return (str);
+}
+
+5-strstr.c/     0           0     0     644     219       `
+#include <string.h>
+
+/**
+ * _strstr - the string string
+ * @haystack: the stack
+ * @needle: the needle
+ *
+ *
+ * Return: the string
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	return (strstr(haystack, needle));
+}
+
+6-abs.c/        0           0     0     644     136       `
+/**
+ * _abs - _abs
+ * @n: the number
+ * Return: Always 0 (Success)
+ */
+int _abs(int n)
+{
+	if (n < 0)
+		return (n * -1);
+
+	return (n);
+}
+6-cap_string.c/ 0           0     0     644     574       `
+#include <string.h>
+#include <ctype.h>
+
+/**
+ * cap_string - capitalize string
+ * @str: the string
+ *
+ * Return: The string
+ */
+
+char *cap_string(char *str)
+{
+
+	int i;
+	int capitalize_next = -1;
+	char c;
+
+	for (i = 0; i < (int)strlen(str); i++)
+	{
+		if (capitalize_next == 0)
+		{
+			str[i] = toupper(str[i]);
+			capitalize_next = -1;
+		}
+
+		c = str[i];
+
+		if (c == ',' || c == ';' || c == ' ' || c == '\n' ||
+			c == '\t' || c == '.' || c == '!' || c == '?' ||
+			c == '"' || c == '(' || c == ')' || c == '{' || c == '"')
+		{
+			capitalize_next = 0;
+		}
+	}
+
+	return (str);
+}
+/459            0           0     0     644     219       `
+
+/**
+ * is_prime_number - return 1 if prime else 0
+ * @n: the number
+ * Return: 1 or 0
+ */
+
+int is_prime_number(int n)
+{
+	if (n <= 1)
+		return (0);
+
+	if ((n % 2) != 0)
+		return (1);
+
+	return (is_prime_number(n - 2));
+}
+
+6-print_line.c/ 0           0     0     644     218       `
+#include "putchar.h"
+
+/**
+ * print_line - print line
+ * @n: the number of _ char
+ *
+ * Return: Always status.
+ */
+
+void print_line(int n)
+{
+
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		_putchar('_');
+	}
+
+	_putchar('\n');
+}
+/480            0           0     0     644     189       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 48; n <= 57; n++)
+	{
+		putchar(n);
+	}
+	putchar('\n');
+
+	return (0);
+}
+
+6-puts2.c/      0           0     0     644     288       `
+
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * puts2 - put alt character
+ * @str: the string
+ *
+ * Return: Void
+ */
+
+void puts2(char *str)
+{
+	int s_length = strlen(str);
+	int i;
+
+	for (i = 0; i < s_length; i++)
+	{
+		if (i % 2 != 0)
+			continue;
+
+		putchar(str[i]);
+	}
+
+	putchar('\n');
+}
+6-size.c/       0           0     0     644     416       `
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	printf("Size of a char: %d byte(s)\n", sizeof(char));
+	printf("Size of an int: %d byte(s)\n", sizeof(int));
+	printf("Size of a long int: %d byte(s)\n", sizeof(long int));
+	printf("Size of a long long int: %d byte(s)\n", sizeof(long long int));
+	printf("Size of a float: %d byte(s)\n", sizeof(float));
+	return (0);
+}
+7-leet.c/       0           0     0     644     377       `
+#include <string.h>
+
+/**
+ * leet - convert to code
+ * @str: the string
+ *
+ * Return: the new converted string
+ */
+
+char *leet(char *str)
+{
+	int i, j;
+	char *ch = "aeotlAEOTL";
+	char *encode = "4307143071";
+
+	for (i = 0; i < (int)strlen(ch); i++)
+	{
+		for (j = 0; j < (int)strlen(str); j++)
+		{
+			if (ch[i] == str[j])
+			{
+				str[j] = encode[i];
+			}
+		}
+	}
+
+	return (str);
+}
+
+/499            0           0     0     644     283       `
+
+void _putchar(char c);
+/**
+ * print_chessboard - print the chess board
+ * @a: the string
+ *
+ * Return: Void
+ */
+void print_chessboard(char (*a)[8])
+{
+	int i, j;
+
+	for (j = 0; j < (int)sizeof(a); j++)
+	{
+		for (i = 0; i < 8; i++)
+		{
+			_putchar(a[j][i]);
+		}
+		_putchar('\n');
+	}
+}
+
+/521            0           0     0     644     324       `
+#include "putchar.h"
+
+/**
+ * print_diagonal - print diagonal line
+ * @n: the number of _ char
+ *
+ * Return: Always status.
+ */
+
+void print_diagonal(int n)
+{
+
+	int i, j;
+
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < i; j++)
+		{
+			_putchar(' ');
+		}
+
+		_putchar('\\');
+		_putchar('\n');
+	}
+
+	if (n <= 0)
+		_putchar('\n');
+}
+/541            0           0     0     644     358       `
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "putchar.h"
+/**
+ * print_last_digit - print_last_digit
+ * @n: the number
+ * Return: Always 0 (Success)
+ */
+int print_last_digit(int n)
+{
+	char buf[256];
+	char last_digit;
+
+	sprintf(buf, "%d", n);
+	last_digit = buf[strlen(buf) - 1];
+
+	_putchar((int)last_digit);
+	return (last_digit - 48);
+}
+/563            0           0     0     644     190       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 122; n >= 97; n--)
+	{
+		putchar(n);
+	}
+	putchar('\n');
+
+	return (0);
+}
+7-puts_half.c/  0           0     0     644     374       `
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * puts_half - put half characters
+ * @str: the character
+ *
+ * Return: Void
+ */
+
+void puts_half(char *str)
+{
+	int s_length = strlen(str);
+	int half_length = s_length / 2;
+	int i;
+
+	if ((s_length % 2) != 0)
+		half_length = (s_length + 1) / 2;
+
+	for (i = half_length; i < s_length; i++)
+	{
+		putchar(str[i]);
+	}
+
+	putchar('\n');
+}
+8-24_hours.c/   0           0     0     644     224       `
+#include <stdio.h>
+
+/**
+ * jack_bauer - jack_bauer
+ * Return: Always 0 (Success)
+ */
+void jack_bauer(void)
+{
+	int i, j;
+
+	for (i = 0; i <= 23; i++)
+	{
+		for (j = 0; j <= 59; j++)
+		{
+			printf("%.2d:%.2d\n", i, j);
+		}
+	}
+}
+8-print_array.c/0           0     0     644     285       `
+#include <stdio.h>
+
+/**
+ * print_array - print array
+ * @a: the pointer of int
+ * @n: number to print
+ *
+ * Return: Void
+ */
+
+void print_array(int *a, int n)
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+
+		if (i != n - 1)
+		{
+			printf(", ");
+		}
+	}
+
+	putchar('\n');
+}
+
+/583            0           0     0     644     228       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 48; n <= 57; n++)
+		putchar(n);
+
+	for (n = 97; n <= 102; n++)
+		putchar(n);
+
+	putchar('\n');
+
+	return (0);
+}
+/601            0           0     0     644     593       `
+#include <stdio.h>
+
+/**
+ * print_diagsums - print diagsum
+ * @a: the array
+ * @size: the size
+ *
+ * Return: Void
+ */
+
+void print_diagsums(int *a, int size)
+{
+	int c,
+		arr_size = size * size,
+		i_result = 0, i_count_down = 0,
+		j_result = 0, j_count_down = size - 1;
+
+	i_result += a[0];
+
+	for (c = 0; c < arr_size; c++)
+	{
+		if (i_count_down == size + 1)
+		{
+			i_result += a[c];
+			i_count_down = 0;
+		}
+
+		if (j_count_down == 0 && c != arr_size - 1)
+		{
+			j_result += a[c];
+			j_count_down = size - 1;
+		}
+
+		++i_count_down;
+		--j_count_down;
+	}
+
+	printf("%d, %d\n", i_result, j_result);
+}
+
+/621            0           0     0     644     310       `
+#include "putchar.h"
+
+/**
+ * print_square - print squares
+ * @size: the number of # char
+ *
+ * Return: Always status.
+ */
+
+void print_square(int size)
+{
+
+	int i, j;
+
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			_putchar('#');
+		}
+		_putchar('\n');
+	}
+
+	if (size <= 0)
+		_putchar('\n');
+}
+9-fizz_buzz.c/  0           0     0     644     355       `
+#include <stdio.h>
+
+/**
+ * main - entry point
+ *
+ * Return: Always status.
+ */
+
+int main(void)
+{
+
+	int i;
+
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf("FizzBuzz");
+		}
+		else if (i % 3 == 0)
+		{
+			printf("Fizz");
+		}
+		else if (i % 5 == 0)
+		{
+			printf("Buzz");
+		}
+		else
+		{
+			printf("%d", i);
+		}
+	}
+
+	return (0);
+}
+
+9-print_comb.c/ 0           0     0     644     248       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 48; n <= 57; n++)
+	{
+		putchar(n);
+
+		if (n != 57)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+
+	}
+	putchar('\n');
+
+	return (0);
+}
+9-strcpy.c/     0           0     0     644     191       `
+#include <string.h>
+
+/**
+ * _strcpy - copy str to dest
+ * @dest: the dest
+ * @src: the src
+ *
+ * Return: new string
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	return (strcpy(dest, src));
+}
+
+9-times_table.c/0           0     0     644     323       `
+#include <stdio.h>
+#include "putchar.h"
+/**
+ * times_table - times_table
+ *
+ */
+
+void times_table(void)
+{
+	int i, j;
+
+	for (i = 0; i <= 9; i++)
+	{
+		for (j = 0; j <= 9; j++)
+		{
+			if (j == 0)
+				printf("%d", i * j);
+			else
+				printf("%*d", 3, i * j);
+
+			if (j != 9)
+				printf(",");
+			else
+				printf("\n");
+		}
+	}
+}
+
+_putchar.c/     0           0     0     644     74        `
+#include <stdio.h>
+extern void _putchar(char ch)
+{
+	printf("%c", ch);
+}
+
+
