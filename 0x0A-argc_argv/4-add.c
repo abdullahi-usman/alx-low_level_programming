@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <limits.h>
+#include <ctype.h>
 
 /**
  * main - the program entry point
@@ -28,7 +29,7 @@ int main(int argc, char **argv)
 		errno = 0;
 		cal = strtol(argv[i], &endptr, 10);
 
-		if (cal == 0)
+		if (errno != 0 || isalpha(*endptr) != 0)
 		{
 			printf("Error\n");
 			return (1);
