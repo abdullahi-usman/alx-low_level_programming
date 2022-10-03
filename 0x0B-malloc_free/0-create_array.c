@@ -14,13 +14,13 @@ char *create_array(unsigned int size, char c)
 	char *characters;
 
 	if (size <= 0)
-		return NULL;
+		return (NULL);
 
 	n_size = sizeof(char) * size;
 	characters = (char *)malloc(n_size);
 
 	if (characters == NULL)
-		return NULL;
+		return (NULL);
 
 	memset(characters, c, size);
 
