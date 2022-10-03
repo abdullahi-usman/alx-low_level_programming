@@ -11,17 +11,19 @@
 int **alloc_grid(int width, int height)
 {
 
-	int *array;
+	int i, **array = malloc(sizeof(int[width][height]));
 
 	if (width == 0 || height == 0)
 		return (NULL);
 
-	array = (int *)malloc((width * height) * sizeof(int));
+	for (i = 0; i < height; i++)
+	{
+		array[i] = (int *)malloc(sizeof(int) * width);
+		if (array[i] == NULL)
+			return (NULL);
 
-	if (array == NULL)
-		return (array);
+		memset(array[i], (char)0, sizeof(int) * width);
+	}
 
-	memset(array, (char)0, sizeof(width * height) * sizeof(int));
-
-	return (array);
+	return array;
 }
