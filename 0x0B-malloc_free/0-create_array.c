@@ -10,8 +10,17 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	int n_size = sizeof(char) * size;
-	char *characters = (char *)malloc(n_size);
+	int n_size;
+	char *characters;
+
+	if (size <= 0)
+		return NULL;
+
+	n_size = sizeof(char) * size;
+	characters = (char *)malloc(n_size);
+
+	if (characters == NULL)
+		return NULL;
 
 	memset(characters, c, size);
 
