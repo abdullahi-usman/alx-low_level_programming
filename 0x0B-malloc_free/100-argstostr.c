@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i;
-	char *args;
+	char *args, n_args;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -22,10 +22,14 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		args = (char *)realloc(args, (strlen(args) + strlen(av[i])) * sizeof(char));
+		n_args = (char *)realloc(args, (strlen(args) + strlen(av[i])) * sizeof(char));
 
-		if (args == NULL)
+		if (n_args == NULL)
+		{
+			free(args);
 			return (NULL);
+		}
+		args = n_args;
 
 		strcat(args, av[i]);
 		strcat(args, "\n");
