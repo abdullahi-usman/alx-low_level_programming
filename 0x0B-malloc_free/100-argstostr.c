@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		args = (char *)realloc(args, (ac + strlen(args)) * sizeof(char));
+		args = (char *)realloc(args, (strlen(args)) * sizeof(char));
 
 		if (args == NULL)
 			return (NULL);
