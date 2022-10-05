@@ -16,10 +16,16 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	char *args = (char *)malloc(ac);
+	if (args == NULL)
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
 		args = (char *)realloc(args, ac + strlen(args));
+
+		if (args == NULL)
+			return (NULL);
+
 		strcat(args, av[i]);
 		strcat(args, "\n");
 	}
