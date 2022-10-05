@@ -16,13 +16,13 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	args = (char *)malloc(ac sizeof(char));
+	args = (char *)malloc(ac * sizeof(char));
 	if (args == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		args = (char *)realloc(args, (strlen(args)) * sizeof(char));
+		args = (char *)realloc(args, strlen(args) * sizeof(char));
 
 		if (args == NULL)
 			return (NULL);
