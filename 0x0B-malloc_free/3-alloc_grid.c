@@ -20,7 +20,10 @@ int **alloc_grid(int width, int height)
 	{
 		array[i] = (int *)malloc(width * sizeof(int));
 		if (array[i] == NULL)
+		{
+			free(array);
 			return (NULL);
+		}
 
 		memset(array[i], (char)0, width);
 	}
