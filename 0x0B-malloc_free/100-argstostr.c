@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 		char_size += (int)strlen(av[i]);
 	}
 
-	args = (char *)malloc((ac + char_size) * sizeof(char));
+	args = (char *)malloc((ac + char_size + 1) * sizeof(char));
 	if (args == NULL)
 		return (NULL);
 
