@@ -14,22 +14,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int malloced_n;
 	char *buf;
 
-	malloced_n = s1 != NULL ? strlen(s1) : 1;
+	malloced_n = s1 != NULL ? (strlen(s1) * sizeof(char)) : 1;
 
 	if (s2 == NULL)
 		malloced_n += 1;
-	else if (n >= strlen(s2))
-		malloced_n += strlen(s2);
+	else if (n >= (sizeof(char) * strlen(s2)))
+		malloced_n += (sizeof(char) * strlen(s2));
 	else
 		malloced_n += n;
 
-	buf = (char *)malloc(malloced_n * sizeof(char));
+	buf = (char *)malloc(malloced_n);
 
 	if (s1 != NULL)
 		strcat(buf, s1);
 
 	if (s2 != NULL)
-		strncat(buf, s2, malloced_n - strlen(s1));
+		strncat(buf, s2, (malloced_n - (strlen(s1) * sizeof(char))) / sizeof(char));
 
 	return (buf);
 }
