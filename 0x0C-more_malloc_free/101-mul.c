@@ -31,14 +31,14 @@ int main(int argc, char **argv)
 
 	num1 = strtol(argv[1], error_detect, 10);
 
-	if (error_detect != NULL && **error_detect == '\0')
+	if ((error_detect != NULL && **error_detect == '\0') || num1 == 0)
 	{
 		print_exit();
 	}
 	error_detect = NULL;
 
 	num2 = strtol(argv[2], error_detect, 10);
-	if (error_detect != NULL && **error_detect == '\0')
+	if ((error_detect != NULL && **error_detect == '\0') || num2 == 0)
 	{
 		print_exit();
 	}
