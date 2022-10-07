@@ -29,16 +29,17 @@ int main(int argc, char **argv)
 		print_exit();
 	}
 
+	errno = -1;
 	num1 = strtol(argv[1], error_detect, 10);
 
-	if (error_detect != NULL && **error_detect == '\0')
+	if ((error_detect != NULL && **error_detect == '\0') || errno != -1)
 	{
 		print_exit();
 	}
 	error_detect = NULL;
 
 	num2 = strtol(argv[2], error_detect, 10);
-	if (error_detect != NULL && **error_detect == '\0')
+	if ((error_detect != NULL && **error_detect == '\0') || errno != -1)
 	{
 		print_exit();
 	}
