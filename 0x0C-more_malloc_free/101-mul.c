@@ -29,20 +29,20 @@ int main(int argc, char **argv)
 		print_exit();
 	}
 
-	errno = -1;
+	errno = -999;
 	error_detect = NULL;
 	num1 = strtol(argv[1], error_detect, 10);
 
-	if ((error_detect != NULL && **error_detect == '\0') || errno != -1)
+	if ((error_detect != NULL && **error_detect == '\0') || errno != -999)
 	{
 		print_exit();
 	}
 
-	errno = -1;
+	errno = -999;
 	error_detect = NULL;
 	num2 = strtol(argv[2], error_detect, 10);
 
-	if ((error_detect != NULL && **error_detect == '\0') || errno != -1)
+	if ((error_detect != NULL && **error_detect == '\0') || errno != -999)
 	{
 		print_exit();
 	}
