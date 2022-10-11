@@ -5,6 +5,6 @@
  * ABS - compute abs
  * @x: the number
  */
-#define ABS(x) abs(x)
+#define ABS(x) x
 
 #endif
