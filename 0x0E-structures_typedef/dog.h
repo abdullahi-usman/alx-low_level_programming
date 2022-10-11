@@ -29,4 +29,14 @@ void init_dog(struct dog *d, char *name, float age, char *owner);
  * @d: the dog
  */
 void print_dog(struct dog *d);
+
+/**
+ * new_dog - creates a new dog
+ * @name: the dog's name
+ * @age: his age
+ * @owner: his owner
+ *
+ * Return: populated new dog
+ */
+dog_t *new_dog(char *name, float age, char *owner);
 #endif
