@@ -39,4 +39,12 @@ void print_dog(struct dog *d);
  * Return: populated new dog
  */
 dog_t *new_dog(char *name, float age, char *owner);
+
+/**
+ * free_dog - free a dog
+ * @d: the allocated dog
+ *
+ * Return: Void
+ */
+void free_dog(dog_t *d);
 #endif
