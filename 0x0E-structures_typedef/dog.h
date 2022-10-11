@@ -22,4 +22,10 @@ struct dog
  * @owner: the owner
  */
 void init_dog(struct dog *d, char *name, float age, char *owner);
+
+/**
+ * print_dog - print a dog
+ * @d: the dog
+ */
+void print_dog(struct dog *d);
 #endif
