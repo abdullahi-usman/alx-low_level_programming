@@ -1,5 +1,3 @@
-#ifndef __DOG_H__
-#define __DOG_H__
 
 /**
  * struct dog - a struct od a dog
@@ -13,5 +11,3 @@ struct dog
 	int age;
 	char *owner;
 };
-
-#endif
