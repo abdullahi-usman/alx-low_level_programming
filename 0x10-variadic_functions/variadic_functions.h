@@ -18,4 +18,13 @@ int sum_them_all(const unsigned int n, ...);
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...);
+
+/**
+ * print_strings - print the variadic arg strings
+ * @separator: the seperator between each number
+ * @n: number of argument
+ *
+ * Return: Void
+ */
+void print_strings(const char *separator, const unsigned int n, ...);
 #endif
