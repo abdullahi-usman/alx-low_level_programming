@@ -43,7 +43,7 @@ void print_all(const char *const format, ...)
 		}
 
 		if (i != (s_len - 1) && j != -1)
-			printf(",");
+			printf(", ");
 		else
 			j = 0;
 
