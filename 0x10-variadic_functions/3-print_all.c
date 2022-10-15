@@ -14,7 +14,7 @@ void print_all(const char *const format, ...)
 	char *arg;
 	va_list ap;
 
-	va_start(ap, s_len);
+	va_start(ap, format);
 	while (i < s_len)
 	{
 
