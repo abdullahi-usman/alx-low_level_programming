@@ -27,4 +27,12 @@ void print_numbers(const char *separator, const unsigned int n, ...);
  * Return: Void
  */
 void print_strings(const char *separator, const unsigned int n, ...);
+
+/**
+ * print_all - print all char according to format
+ * @format: the format
+ *
+ * Return: Void
+ */
+void print_all(const char *const format, ...);
 #endif
