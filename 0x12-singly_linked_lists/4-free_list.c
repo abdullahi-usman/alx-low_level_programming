@@ -29,4 +29,6 @@ void free_list(list_t *head)
 
 	free(cur_head->str);
 	cur_head->next = NULL;
+
+	free(head);
 }
