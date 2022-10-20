@@ -21,6 +21,7 @@ void free_list(list_t *head)
 		if (cur_head->str != NULL)
 			free(cur_head->str);
 
+		cur_head->next = NULL;
 		free(cur_head);
 
 		cur_head = temp_head;
