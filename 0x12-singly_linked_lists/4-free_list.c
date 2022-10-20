@@ -12,6 +12,9 @@ void free_list(list_t *head)
 {
 	list_t *temp_head, *cur_head = head;
 
+	if (head == NULL)
+		return;
+
 	while (cur_head->next != NULL)
 	{
 		temp_head = &(*cur_head->next);
