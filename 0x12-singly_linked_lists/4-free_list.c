@@ -18,6 +18,4 @@ void free_list(list_t *head)
 		free(cur_head);
 		cur_head = temp_head;
 	}
-
-	free(cur_head);
 }
