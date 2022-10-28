@@ -11,6 +11,7 @@
 int divide(unsigned long int n, int *reminder)
 {
 	int r = n, c = 0;
+
 	while (1)
 	{
 		if (r < 2)
@@ -22,7 +23,7 @@ int divide(unsigned long int n, int *reminder)
 		c++;
 	}
 
-	return c;
+	return (c);
 }
 
 /**
@@ -32,14 +33,11 @@ int divide(unsigned long int n, int *reminder)
  */
 void print_binary(unsigned long int n)
 {
-	int r = n, x;
+	int x;
 
-	while (1)
-	{
-		if (r <= 0)
-			break;
+	if (n > 0)
+		print_binary(divide(n, &x));
 
-		r = divide(r, &x);
-		printf("%d", x);
-	}
+	if (x == 1 || x == 0)
+		_putchar(x);
 }
