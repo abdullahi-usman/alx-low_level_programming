@@ -1,6 +1,11 @@
 #include <string.h>
 #include <stdio.h>
 
+/**
+ * _pow - add pow up
+ * @n: the power
+ * Return: the result
+ */
 int _pow(int n)
 {
 	int r = 2, i;
@@ -11,9 +16,9 @@ int _pow(int n)
 	}
 
 	if (n == 0)
-		return 0;
+		return (0);
 
-	return r;
+	return (r);
 }
 /**
  * binary_to_uint - convert binary ti decimal
@@ -35,7 +40,7 @@ unsigned int binary_to_uint(const char *b)
 			_rr = (int)b[c] - 48;
 
 			if (_rr != 0 && _rr != 1)
-				return 0;
+				return (0);
 
 			r += (_rr * _pow(len - c - 1));
 
