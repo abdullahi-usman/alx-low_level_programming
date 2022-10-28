@@ -1,6 +1,5 @@
 #include <string.h>
 #include <stdio.h>
-
 /**
  * _pow - add pow up
  * @n: the power
