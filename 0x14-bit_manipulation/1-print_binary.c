@@ -38,6 +38,8 @@ void print_binary(unsigned long int n)
 	if (n > 0)
 		print_binary(divide(n, &x));
 
-	if (x == 1 || x == 0)
-		_putchar((char)x);
+	if (x == 1)
+		_putchar('1');
+	else if (x == 0)
+		_putchar('0');
 }
