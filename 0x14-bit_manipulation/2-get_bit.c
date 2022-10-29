@@ -60,7 +60,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	__print_binary(n, buf);
 
 	if (strlen(buf) > index)
+	{
 		r = buf[strlen(buf) - (index + 1)];
+		free(buf);
+	}
 
 	return (r);
 }
