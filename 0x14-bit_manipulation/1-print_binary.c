@@ -39,5 +39,5 @@ void print_binary(unsigned long int n)
 		print_binary(divide(n, &x));
 
 	if (x == 1 || x == 0)
-		_putchar(x);
+		printf("%d", x);
 }
