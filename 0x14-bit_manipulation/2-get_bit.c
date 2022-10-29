@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * divide - divide a number
+ * __divide - divide a number
  * @n: the number
  * @reminder: the reminder
  *
@@ -29,8 +29,9 @@ int __divide(unsigned long int n, int *reminder)
 }
 
 /**
- * print_binary - print binary number
+ * __print_binary - print binary number
  * @n: the number
+ * @buf: the buffer
  * Return: void
  */
 void __print_binary(unsigned long int n, char *buf)
@@ -45,6 +46,12 @@ void __print_binary(unsigned long int n, char *buf)
         buf[strlen(buf)] = (char)x;
 }
 
+/**
+ * get_bit - get the bit at index
+ * @n: the number
+ * @index: the possition
+ * Return: the index
+ */
 int get_bit(unsigned long int n, unsigned int index)
 {
     char *buf = (char *)malloc(sizeof(char) * 60);
