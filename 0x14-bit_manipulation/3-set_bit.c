@@ -118,5 +118,5 @@ int set_bit(unsigned long int *n, unsigned int index)
 	}
 
 	*n = binary_to_uint(r_buf);
-	return (0);
+	return (1);
 }
