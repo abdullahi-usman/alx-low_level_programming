@@ -59,7 +59,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	__print_binary(n, buf);
 
 	if (strlen(buf) > index)
-		return (buf[strlen(buf) - index]);
+		return (buf[strlen(buf) - (index + 1)]);
 
 	return (-1);
 }
