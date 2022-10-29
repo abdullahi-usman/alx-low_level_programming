@@ -12,20 +12,20 @@
  */
 int __divide(unsigned long int n, int *reminder)
 {
-    int r = n, c = 0;
+	int r = n, c = 0;
 
-    while (1)
-    {
-        if (r < 2)
-        {
-            *reminder = r;
-            break;
-        }
-        r = r - 2;
-        c++;
-    }
+	while (1)
+	{
+		if (r < 2)
+		{
+			*reminder = r;
+			break;
+		}
+		r = r - 2;
+		c++;
+	}
 
-    return (c);
+	return (c);
 }
 
 /**
@@ -37,13 +37,13 @@ int __divide(unsigned long int n, int *reminder)
 void __print_binary(unsigned long int n, char *buf)
 {
 
-    int x;
+	int x;
 
-    if (n > 0)
-        __print_binary(__divide(n, &x), buf);
+	if (n > 0)
+		__print_binary(__divide(n, &x), buf);
 
-    if (x == 1 || x == 0)
-        buf[strlen(buf)] = (char)x;
+	if (x == 1 || x == 0)
+		buf[strlen(buf)] = (char)x;
 }
 
 /**
@@ -54,11 +54,12 @@ void __print_binary(unsigned long int n, char *buf)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-    char *buf = (char *)malloc(sizeof(char) * 60);
-    __print_binary(n, buf);
+	char *buf = (char *)malloc(sizeof(char) * 60);
 
-    if (strlen(buf) > index)
-        return buf[strlen(buf) - index];
+	__print_binary(n, buf);
 
-    return -1;
+	if (strlen(buf) > index)
+		return (buf[strlen(buf) - index]);
+
+	return (-1);
 }
