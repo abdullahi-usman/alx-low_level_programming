@@ -54,12 +54,13 @@ void __print_binary(unsigned long int n, char *buf)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	char *buf = (char *)malloc(sizeof(char) * 60);
+	char *buf = (char *)malloc(sizeof(char) * 200);
+	int r = -1;
 
 	__print_binary(n, buf);
 
 	if (strlen(buf) > index)
-		return (buf[strlen(buf) - (index + 1)]);
+		r = buf[strlen(buf) - (index + 1)];
 
-	return (-1);
+	return (r);
 }
