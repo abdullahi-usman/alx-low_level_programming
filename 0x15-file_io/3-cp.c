@@ -13,7 +13,6 @@
  */
 int main(int ac, char **av)
 {
-	ssize_t n;
 	int file_from, file_to, rd, read_bytes_buf = sizeof(char) * 1024;
 	char *buf = (char *)malloc(read_bytes_buf);
 
@@ -36,7 +35,7 @@ int main(int ac, char **av)
 		exit(98);
 	}
 
-	while ((rd = read(file_from, buf, read_bytes)) > 0)
+	while ((rd = read(file_from, buf, read_bytes_buf)) > 0)
 	{
 		write(file_to, buf, rd);
 	}
