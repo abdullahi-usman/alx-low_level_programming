@@ -28,8 +28,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 		if (read_no != -1)
 		{
-			puts(buf);
-			read_no /= sizeof(char);
+			if (write(STDIN_FILENO, buf, read_no) != -1)
+				read_no /= sizeof(char);
 		}
 		else
 		{
