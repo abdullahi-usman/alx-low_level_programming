@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
+#include <string.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -14,13 +15,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, malloc_s = sizeof(char) * letters;
 	ssize_t read_no = 0;
-	char *buf;
+	char *buf, *n_filename, *wd = NULL;
+
+	wd = getcwd(wd, 0);
 
 	if (filename == NULL || letters == 0)
 		return (read_no);
 
-	buf = (char *)malloc(malloc_s);
-	fd = open(filename, O_RDONLY);
+	n_filename = (char *)malloc(PATH_MAX);
+	strcpy(n_filename, wd);
+	strcpy(n_filename + strlen(n_filename), "/");
+	strcpy(n_filename + strlen(n_filename), filename);
+
+	free(wd);
+	fd = open(n_filename, O_RDONLY);
+	buf = (char *)malloc(sizeof(char) * letters);
 
 	if (fd != -1 && buf != NULL)
 	{
@@ -37,5 +46,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		}
 	}
 
+	free(n_filename);
 	return (read_no);
 }
