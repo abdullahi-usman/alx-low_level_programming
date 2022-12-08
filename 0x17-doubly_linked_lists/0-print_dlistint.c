@@ -15,7 +15,11 @@ size_t print_dlistint(const dlistint_t *h)
 	{
 		printf("%d\n", h->n);
 		c++;
-		next = h->next;
+		next = h->prev;
+	}
+	else
+	{
+		return (c);
 	}
 
 	while (1)
@@ -26,7 +30,7 @@ size_t print_dlistint(const dlistint_t *h)
 		}
 		c++;
 		printf("%d\n", next->n);
-		next = next->next;
+		next = next->prev;
 	}
 
 	return (c);
