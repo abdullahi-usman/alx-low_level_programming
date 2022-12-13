@@ -1,4 +1,10 @@
-char *_strstr(char *haystack, char *needle)
-{ 
-	return (0); 
+/**
+ * _strspn - _strspn
+ * @s: s
+ * @accept: accept
+ * Return: 0
+*/
+unsigned int _strspn(char *s, char *accept)
+{
+	return (0);
 }

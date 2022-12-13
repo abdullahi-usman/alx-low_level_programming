@@ -1,3 +1,8 @@
-void _puts(char *s){ 
-
+/**
+ * _puts - _puts
+ * @s: s
+ * Return: 0
+*/
+void _puts(char *s)
+{
 }
