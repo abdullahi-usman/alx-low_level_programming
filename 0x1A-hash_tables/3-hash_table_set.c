@@ -32,28 +32,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		tmp_node = ht->array[index];
-		if (strcmp(tmp_node->key, dup_key) == 0)
-			strcpy(tmp_node->value, dup_value);
-		else
+		while (tmp_node != NULL)
 		{
-			while (tmp_node != NULL)
+			if (tmp_node->next != NULL)
 			{
-				if (tmp_node->next != NULL)
+				if (strcmp(tmp_node->key, dup_key) == 0)
 				{
-					if (strcmp(tmp_node->key, dup_key) == 0)
-					{
-						strcpy(tmp_node->value, dup_value);
-						break;
-					}
-					tmp_node = tmp_node->next;
-					continue;
-				} else
-				{
-					tmp_node->next = node;
+					strcpy(tmp_node->value, dup_value);
 					break;
 				}
-				return (0);
+				tmp_node = tmp_node->next;
+				continue;
+			} else
+			{
+				tmp_node->next = node;
+				break;
 			}
+			return (0);
 		}
 	}
 	return (1);
