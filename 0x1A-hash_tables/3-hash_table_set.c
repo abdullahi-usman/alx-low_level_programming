@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *tmp_node, *node = (hash_node_t *)malloc(sizeof(hash_node_t));
 
 	if (dup_key == NULL || dup_value == NULL || node == NULL)
-		return (-1);
+		return (0);
 
 
 	
@@ -35,20 +35,28 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	} else
 	{
 		tmp_node = ht->array[index];
-		while (tmp_node != NULL)
-		{
-			if (tmp_node->next != NULL)
-			{
-				tmp_node = tmp_node->next;
-				continue;
-			} else
-			{
-				tmp_node->next = node;
-				break;
-			}
 
-			return (-1);
+		if (strcmp(tmp_node->key, dup_key) == 0)
+		{
+			tmp_node->value = value;
+		} else 
+		{
+			while (tmp_node != NULL)
+			{
+				if (tmp_node->next != NULL)
+				{
+					tmp_node = tmp_node->next;
+					continue;
+				} else
+				{
+					tmp_node->next = node;
+					break;
+				}
+						
+				return (0);
+			}
 		}
 	}
-	return (0);
+
+	return (1);
 }
