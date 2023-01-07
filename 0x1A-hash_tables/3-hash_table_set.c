@@ -33,6 +33,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp_node = ht->array[index];
 		while (tmp_node != NULL)
 		{
+			if (strcmp(key, tmp_node->key) == 0)
+			{
+				strcpy(tmp_node->value, value);
+			}
 			if (tmp_node->next == NULL)
 			{
 				tmp_node->next = node;
