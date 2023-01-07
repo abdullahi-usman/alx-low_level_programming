@@ -34,13 +34,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp_node = ht->array[index];
 		while (tmp_node != NULL)
 		{
+			if (strcmp(tmp_node->key, dup_key) == 0)
+			{
+				strcpy(tmp_node->value, dup_value);
+				break;
+			}
 			if (tmp_node->next != NULL)
 			{
-				if (strcmp(tmp_node->key, dup_key) == 0)
-				{
-					strcpy(tmp_node->value, dup_value);
-					break;
-				}
 				tmp_node = tmp_node->next;
 				continue;
 			} else
