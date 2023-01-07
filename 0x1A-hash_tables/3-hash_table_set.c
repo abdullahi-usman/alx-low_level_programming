@@ -8,7 +8,6 @@
  * @ht: the hash table
  * @key: the key
  * @value: the value
- * 
  * Return: 1 on success and -1 on error
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -21,8 +20,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (dup_key == NULL || dup_value == NULL || node == NULL)
 		return (0);
 
-
-	
 	strcpy(dup_key, key);
 	strcpy(dup_value, value);
 	index = key_index((const unsigned char *)dup_key, ht->size);
@@ -35,11 +32,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	} else
 	{
 		tmp_node = ht->array[index];
-
 		if (strcmp(tmp_node->key, dup_key) == 0)
-		{
-			tmp_node->value = value;
-		} else 
+			tmp_node->value = dup_value;
+		else
 		{
 			while (tmp_node != NULL)
 			{
@@ -52,11 +47,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 					tmp_node->next = node;
 					break;
 				}
-						
 				return (0);
 			}
 		}
 	}
-
 	return (1);
 }
