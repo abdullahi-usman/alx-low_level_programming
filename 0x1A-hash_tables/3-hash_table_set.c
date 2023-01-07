@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *tmp_node, *node = (hash_node_t *)malloc(sizeof(hash_node_t));
 
 	if (dup_key == NULL || dup_value == NULL ||
-		node == NULL || index < 0 || index > ht->size)
+		node == NULL || 0 > (long)index || ((long)index) > (long)ht->size)
 		return (0);
 
 	strcpy(dup_key, key);
