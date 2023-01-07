@@ -25,11 +25,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)dup_key, ht->size);
 	node->key = dup_key;
 	node->value = dup_value;
+	node->next = NULL;
 
 	if (ht->array[index] == NULL)
-	{
 		ht->array[index] = node;
-	} else
+	else
 	{
 		tmp_node = ht->array[index];
 		if (strcmp(tmp_node->key, dup_key) == 0)
