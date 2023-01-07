@@ -28,27 +28,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 
 	if (ht->array[index] == NULL)
-	{
 		ht->array[index] = node;
-		return (0);
-	}
 	else
 	{
 		tmp_node = ht->array[index];
-		while (tmp_node != NULL)
+		if (strcmp(tmp_node->key, dup_key) == 0)
+			strcpy(tmp_node->value, dup_value);
+		else
 		{
-			if (strcmp(tmp_node->key, dup_key) == 0)
+			while (tmp_node != NULL)
 			{
-				strcpy(tmp_node->value, dup_value);
-				return (1);
+				if (tmp_node->next != NULL)
+				{
+					if (strcmp(tmp_node->key, dup_key) == 0)
+					{
+						strcpy(tmp_node->value, dup_value);
+						break;
+					}
+					tmp_node = tmp_node->next;
+					continue;
+				} else
+				{
+					tmp_node->next = node;
+					break;
+				}
+				return (0);
 			}
-			if (tmp_node->next == NULL)
-			{
-				tmp_node->next = node;
-				return (1);
-			}
-			tmp_node = tmp_node->next;
 		}
 	}
-	return (0);
+	return (1);
 }
