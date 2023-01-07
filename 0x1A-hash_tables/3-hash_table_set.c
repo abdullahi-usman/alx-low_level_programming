@@ -12,17 +12,17 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long index;
+	unsigned long index = key_index((const unsigned char *)key, ht->size);
 	char *dup_key = (char *)malloc(sizeof(key) + 1);
 	char *dup_value = (char *)malloc(sizeof(value) + 1);
 	hash_node_t *tmp_node, *node = (hash_node_t *)malloc(sizeof(hash_node_t));
 
-	if (dup_key == NULL || dup_value == NULL || node == NULL)
+	if (dup_key == NULL || dup_value == NULL ||
+		node == NULL || index < 0 || index > ht->size)
 		return (0);
 
 	strcpy(dup_key, key);
 	strcpy(dup_value, value);
-	index = key_index((const unsigned char *)dup_key, ht->size);
 	node->key = dup_key;
 	node->value = dup_value;
 	node->next = NULL;
