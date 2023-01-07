@@ -4,6 +4,7 @@
 
 /**
  * hash_table_get - get hash table
+ * @ht: the hash table
  * @key: the key
  * Return: the value
 */
