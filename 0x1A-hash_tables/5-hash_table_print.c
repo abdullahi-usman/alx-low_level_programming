@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include "hash_tables.h"
 
+
+/**
+ * hash_table_print - print formatted table
+ * @ht: the table
+*/
 void hash_table_print(const hash_table_t *ht)
 {
-	long unsigned int i, printed = 0;
+	unsigned long int i, printed = 0;
 	hash_node_t *cur_node;
+
 	printf("{");
-	
 	for (i = 0; i < ht->size; i++)
 	{
 		cur_node = ht->array[i];
@@ -20,7 +25,7 @@ void hash_table_print(const hash_table_t *ht)
 			printed++;
 			cur_node = cur_node->next;
 		}
-		
+
 	}
 	printf("}\n");
 }
